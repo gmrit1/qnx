@@ -1,0 +1,28 @@
+int ENA = 9;
+int IN1 = 8;
+int IN2 = 7;
+
+void setup() {
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+
+  Serial.begin(9600);
+
+  // Set direction
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+}
+
+void loop() {
+
+  // LOW SPEED
+  analogWrite(ENA, 100);   // PWM (0–255)
+  Serial.println("Motor running at LOW speed");
+  delay(5000);
+
+  // HIGH SPEED
+  analogWrite(ENA, 255);   // Full speed
+  Serial.println("Motor running at HIGH speed");
+  delay(5000);
+}
