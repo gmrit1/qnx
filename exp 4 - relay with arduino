@@ -1,0 +1,13 @@
+int relayPin = 7;
+
+void setup() {
+  pinMode(relayPin, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(relayPin, HIGH); // Turn ON relay (bulb ON)
+  delay(5000);                  // Wait 5 seconds
+
+  digitalWrite(relayPin, LOW);  // Turn OFF relay (bulb OFF)
+  delay(5000);                  // Wait 5 seconds
+}
