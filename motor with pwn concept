@@ -1,0 +1,27 @@
+int enA = 9;   // PWM pin
+int in1 = 8;
+int in2 = 7;
+
+void setup() {
+  pinMode(enA, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+}
+
+void loop() {
+  // Rotate motor forward
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+
+  // Gradually increase speed
+  for (int speed = 0; speed <= 255; speed++) {
+    analogWrite(enA, speed);
+    delay(20);
+  }
+
+  // Gradually decrease speed
+  for (int speed = 255; speed >= 0; speed--) {
+    analogWrite(enA, speed);
+    delay(20);
+  }
+}
